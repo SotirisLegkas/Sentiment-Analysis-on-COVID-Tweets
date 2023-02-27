@@ -10,7 +10,7 @@ I kept the English translation of the full text and the sentiment score (sentime
 
 However, I decided due to time constraints to go straight to pre-trained transformer models. I used the RoBERTa-base model. Hence, I used a pretrained model and fine-tuned it for this specific task, by training a top layer for some epochs.
 
-Note: I should have used a multilingual model like XLM-RoBERTa in dutch text. I did not do it, due to time constraints. However, the procedure is the same.
+***Note: I should have used a multilingual model like XLM-RoBERTa in dutch text. I did not do it, due to time constraints. However, the procedure is the same.***
 
 ## Detailed project description
 I used Google colab to utilize the GPU.
@@ -30,19 +30,19 @@ Next, I split the dataset into train (80%) and validation (20%) and again the tr
 I tranformed the DataFrame into dataset type from Hugging face for easier manipulation and use.
 Finally, I kept only a portion of the datasets for practical reasons. (2000 in train, 200 in validation and 200 in test)
 
-Again, I checked the destribution  of the created hard labels in the whole dataset, which seemed as intented.
+Again, I checked the destribution of the created hard labels in the whole dataset, which seemed as expected.
 
-I loaded the tokenizer and the model of RoBERTa model along with thier configuration and created a preprocess function, which I applied in the datasets.
+I loaded the tokenizer and the model of RoBERTa model along with their configuration and created a preprocess function, which I applied in the datasets.
 
-Note: It is important that train-validation-test sets keep almost the same sentiment distribution, which is the case.
+Note: It is important that train-validation-test sets keep almost the same sentiment score distribution, which is the case here.
 
 I defined a function that computes the metrics of accuracy, macro F1, micro F1 during the training.
 
-I initiallized the training arguments and the trainer
+I initialized the training arguments and the trainer
 
-Note: I used early stopping with patience 3 epochs and trained it for 5 epochs max due to time contraints (There may be a need for further training ). Many other hyperparameters can be analyzed and discussed in a call meeting.
+***Note: I used early stopping with patience 3 epochs and trained it for 5 epochs max due to time contraints (There may be a need for further training). Many other hyperparameters can be analyzed and discussed in a call meeting.***
 
-I trained the model, saved the logits and the results into CSV files. visualized the distribution of the predicted and true sentiments and finally plotted a confusion matrix.
+Finally, I trained the model, saved the logits and the results into CSV files. visualized the distribution of the predicted and true sentiments and finally plotted a confusion matrix. (Can be seen in the pdf)
 
 
 -- | precision |   recall  |f1-score |  support
@@ -54,8 +54,9 @@ accuracy   |           |         |    0.64  |     400
 macro avg       |0.58|      0.54 |     0.55  |     400
 weighted avg     |  0.62    |  0.64    |  0.62   |    400
 
-Note: The results were not ideal. It was just an indicative procedure to a solution. Also, the validation loss seemed off. However, there may be expanation.
+***Note: The results were not ideal. It was just an indicative procedure to a solution. Also, the validation loss seemed off. However, there may be expanation.***
 
-Note 2: Probably, I should have tackled this task like a regression type problem, were the lowest sentiment score would be the negative and the highest the positive. To do this, I could have changed the compute_metrics function like using MAE and use as num_labels=1.
+***Note 2: Probably, I should have tackled this task like a regression type problem, were the lowest sentiment score would be the negative and the highest the positive. To do this, I could have changed the compute_metrics function like using MAE and use as num_labels=1.***
 
 ## For further explanation, I would be happy to discuss my solution in a call.
+
