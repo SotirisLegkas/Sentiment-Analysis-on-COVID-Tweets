@@ -1,16 +1,16 @@
 # Sotiris-Legkas
 
 ## Task selection
-There were many options for plots in presantation, like tweets per name, mean sentiment score per name, mean sentiment score per location or through time (day-month). Also, there were many options for a highly interactive dashboard like a map (latitude,longitude) of the Netherlands with each the locations and a colour scale based on the sentiment score, which could changed interaactively for different dates of the year.
+There were many options for plots in presantation, like tweets per name, mean sentiment score per name, mean sentiment score per location or through time (day-month). Also, there were many options for a highly interactive dashboard like a map (latitude,longitude) of the Netherlands with each the locations and a colour scale based on the sentiment score, which could changed interactively for different dates of the year.
 
 After carefully reviewed the tasks, I chose to build a practical ML model for sentiment analysis.
 
 # Initial thoughts
-I kept the English translation of the full text and the sentiment score (sentiment_pattern). For this task, I should have started with something simple like using a simple model like logistic regression or even a relatively simple MLP and then try something more complex like RNN or a pre-trained model. Also, I should have preprocess the corpus like remove html tags, remove punctuations, remove numbers, single characters, multiple spaces, stopping words and even use lemmatizer, strip accents and lowercase the words. Then I should have tokenized the text make embeddings and use them as input in my model. (Maybe use TFIDF and maybe SVD for dimansionality reduction).
+I kept the English translation of the full text and the sentiment score (sentiment_pattern). For this task, I should have started with something simple like using a simple model like logistic regression or even a relatively simple MLP and then try something more complex like RNN or a pre-trained model. Also, I should have preprocess the corpus like remove html tags, remove punctuations, remove numbers, single characters, multiple spaces, stopping words and even use lemmatizer, strip accents and lowercase the words. Then I should have tokenized the text make embeddings and use them as input in my model. (Maybe use TFIDF and maybe SVD for dimensionality reduction).
 
 However, I decided due to time constraints to go straight to pre-trained transformer models. I used the RoBERTa-base model. Hence, I used a pretrained model and fine-tuned it for this specific task, by training a top layer for some epochs.
 
-Note: I should have used a multilingual model like XLM-RoBERTa in dutch text. I did not do it due to time constraints. However, the procedure is the same.
+Note: I should have used a multilingual model like XLM-RoBERTa in dutch text. I did not do it, due to time constraints. However, the procedure is the same.
 
 ## Detailed project description
 I used Google colab to utilize the GPU.
