@@ -58,5 +58,3 @@ weighted avg     |  0.62    |  0.64    |  0.62   |    400
 
 ***Note 2: Probably, I should have tackled this task like a regression type problem, were the lowest sentiment score would be the negative and the highest the positive. To do this, I could have changed the compute_metrics function like using MAE and use as num_labels=1.***
 
-## For further explanation, I would be happy to discuss my solution in a call.
-
